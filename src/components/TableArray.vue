@@ -13,12 +13,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr v-if="!dataArray">
-                    <td colspan="7" class="text-center py-5">
-                        <h1>Data Kosong</h1>
-                    </td>
-                </tr> -->
-                <!-- <tr v-else v-for="(data, index) in dataArray" v-bind:key="index"> -->
                 <tr>
                     <th scope="row">1</th>
                     <td>Yanjing</td>

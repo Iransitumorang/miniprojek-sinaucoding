@@ -4,7 +4,7 @@
             <h5 class="py-2 ps-3">Marketplace</h5>
             <img src="../assets/sinauLogo.png" alt="Sinau Coding" class="d-flex my-auto ps-2">
         </div>
-        <div>
+        <!-- <div>
             <nav class="navbar navbar-light bg-light">
                 <div class="container-fluid">
                     <button class="navbar-toggler ms-auto" type="button" data-mdb-toggle="collapse"
@@ -21,7 +21,7 @@
                     <button class="btn btn-link btn-block m-0">Link 3</button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </header>
 </template>
 

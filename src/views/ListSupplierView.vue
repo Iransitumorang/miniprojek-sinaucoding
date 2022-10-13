@@ -36,7 +36,30 @@
                         <button type="button" class="btn btn-primary">Tambah Supplier</button>
                     </router-link>
                 </div>
-                <TableArray2 />
+                <!-- <TableArray2 /> -->
+                <table class="table table-bordered px-5">
+                    <tr>
+                        <td>No</td>
+                        <td>Nama Suplier</td>
+                        <td>Alamat</td>
+                        <td>No Telpn</td>
+                        <td class="d-lg-flex justify-content-center">
+                            Aksi
+                        </td>
+                    </tr>
+                    <tbody>
+                        <tr v-for="(data,index) in dataSupplier" v-bind:key="data.index">
+                            <td>{{ index+1 }}</td>
+                            <td>{{ data.namaSupplier }}</td>
+                            <td>{{ data.alamat  }}</td>
+                            <td>{{data.noTelp}}</td>
+                            <td class="d-lg-flex gap-2 justify-content-center">
+                                <button @click='deleteTableRow(data.id)' class="btn btn-danger action">Hapus</button>
+                                <button @click='updateTableRow(data.id)' class="btn btn-warning action">Update</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </article>
         <FooterSinau />
@@ -46,14 +69,67 @@
 <script>
     import FooterSinau from '../components/FooterSinau.vue'
     import HeaderSinau from '../components/HeaderSinau.vue'
-    import TableArray2 from '../components/TableArray2.vue'
+    // import TableArray2 from '../components/TableArray2.vue'
+    import axios from "axios"
 
     export default {
+        created() {
+            this.getSupplier();
+        },
         components: {
             FooterSinau,
-            HeaderSinau,
-            TableArray2
+            HeaderSinau
+            // TableArray2
+        },
+        methods: {
+            async getSupplier() {
+                const {
+                    data
+                } = await axios.get(" http://159.223.57.121:8090/supplier/find-all", {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('Token')}`,
+                        'Content-Type': 'application/json'
+                    },
+                    params: {
+                        offset: 0,
+                        limit: 15
+                    }
+                });
+                console.log('data supplier:', data.data);
+                this.dataSupplier = await data.data;
+            },
+            async deleteTableRow(id) {
+                console.log('id:', id);
+                await axios.delete("http://159.223.57.121:8090/supplier/delete/" + id, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('Token')}`,
+                        'Content-Type': 'application/json'
+                    },
+                }).then(async (response) => {
+                    const data = await response.data;
+
+                    if (data.status === 'OK') {
+                        alert('Hapus  Supplier sukses');
+                        this.getSupplier();
+                    }
+                });
+            },
+            updateTableRow(id) {
+                console.log('id:', id);
+                this.$router.push({
+                    name: 'updatesupplier',
+                    query: {
+                        id: id
+                    }
+                });
+            }
+        },
+        data: function () {
+            return {
+                dataSupplier: []
+            }
         }
+
     }
 </script>
 
@@ -67,18 +143,22 @@
         justify-content: center;
     }
 
-    .userCard, .menuCard, .onlineCard, .DashboardForm {
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    .userCard,
+    .menuCard,
+    .onlineCard,
+    .DashboardForm {
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
     }
 
-    .userName, .dashboardText {
+    .userName,
+    .dashboardText {
         background-color: #B4CDE6;
         font-size: 20px;
         font-weight: 500;
         color: #083AA9;
     }
-    
+
     .barang {
         font-weight: 500;
         font-size: 20px;
@@ -93,4 +173,5 @@
     .underline {
         text-decoration: none;
     }
+
 </style>
