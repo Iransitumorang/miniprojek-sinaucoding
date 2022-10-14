@@ -1,5 +1,6 @@
 <template>
-    <div>
+
+    <body>
         <HeaderSinau />
         <article class="d-flex justify-content-center AddPage">
             <div class="AddForm">
@@ -14,21 +15,25 @@
                     <div class="row mb-3">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Harga Barang</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Masukkan Harga Barang">
+                            <input type="text" class="form-control" id="inputPassword3"
+                                placeholder="Masukkan Harga Barang">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Stok Barang</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputEmail3" placeholder="Masukkan Jumlah Stok Barang">
+                            <input type="text" class="form-control" id="inputEmail3"
+                                placeholder="Masukkan Jumlah Stok Barang">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Supplier Barang</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Masukkan Data Supplier">
+                            <input type="text" class="form-control" id="inputPassword3"
+                                placeholder="Masukkan Data Supplier">
                         </div>
-                    </div> <hr />
+                    </div>
+                    <hr />
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-secondary">Kembali</button>
                         <button type="button" class="btn btn-primary">Update</button>
@@ -37,7 +42,7 @@
             </div>
         </article>
         <FooterSinau />
-    </div>
+    </body>
 </template>
 <script>
     import FooterSinau from '../components/FooterSinau.vue'
@@ -51,6 +56,10 @@
     }
 </script>
 <style scoped>
+    body {
+        background-color: #F5EFE6;
+    }
+
     .AddPage {
         height: 100vh;
         width: 100%;

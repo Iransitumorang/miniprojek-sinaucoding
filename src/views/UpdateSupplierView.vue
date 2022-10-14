@@ -1,5 +1,6 @@
 <template>
-    <div>
+
+    <body>
         <HeaderSinau />
         <article class="d-flex justify-content-center AddPage">
             <div class="AddForm">
@@ -8,21 +9,25 @@
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Supplier</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputEmail3" placeholder="Masukkan Nama Supplier">
+                            <input type="text" class="form-control" id="inputEmail3"
+                                placeholder="Masukkan Nama Supplier">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Alamat Supplier</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Masukkan Alamat Supplier">
+                            <input type="text" class="form-control" id="inputPassword3"
+                                placeholder="Masukkan Alamat Supplier">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">No Telp Supplier</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Masukkan Nomor Supplier">
+                            <input type="text" class="form-control" id="inputPassword3"
+                                placeholder="Masukkan Nomor Supplier">
                         </div>
-                    </div> <hr />
+                    </div>
+                    <hr />
                     <div class="d-flex justify-content-between">
                         <router-link to="/ListSupplierView">
                             <button type="button" class="btn btn-secondary">Kembali</button>
@@ -33,7 +38,7 @@
             </div>
         </article>
         <FooterSinau />
-    </div>
+    </body>
 </template>
 <script>
     import FooterSinau from '../components/FooterSinau.vue'
@@ -47,6 +52,10 @@
     }
 </script>
 <style scoped>
+    body {
+        background-color: #F5EFE6;
+    }
+
     .AddPage {
         height: 100vh;
         width: 100%;

@@ -7,7 +7,7 @@ import UpdateBarangView from '../views/UpdateBarangView.vue'
 import SupplierView from '../views/SupplierView.vue'
 import UpdateSupplierView from '../views/UpdateSupplierView.vue'
 import DashboardView from '../views/DashboardView.vue'
-import ListBarangView from '../views/ListBarangView.vue'
+// import ListBarangView from '../views/ListBarangView.vue'
 import ListSupplierView from '../views/ListSupplierView.vue'
 
 const routes = [
@@ -46,11 +46,11 @@ const routes = [
     name: 'DashboardView',
     component: DashboardView
   },
-  {
-    path: '/ListBarangView',
-    name: 'ListBarangView',
-    component: ListBarangView
-  },
+  // {
+  //   path: '/ListBarangView',
+  //   name: 'ListBarangView',
+  //   component: ListBarangView
+  // },
   {
     path: '/ListSupplierView',
     name: 'ListSupplierView',

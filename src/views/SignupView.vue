@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <body>
     <article class="d-flex justify-content-center loginPage">
       <div>
         <Sidebar />
@@ -32,7 +32,7 @@
       </form>
     </article>
     <FooterSinau />
-  </div>
+  </body>
 </template>
 <script>
   import FooterSinau from '../components/FooterSinau.vue'
@@ -81,6 +81,9 @@
   }
 </script>
 <style scoped>
+body {
+  background-color: #F5EFE6;
+}
   .loginPage {
     height: 100vh;
     width: 100%;

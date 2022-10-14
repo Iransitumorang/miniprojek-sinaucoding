@@ -1,15 +1,16 @@
 <template>
-    <div>
+
+    <body>
         <HeaderSinau />
-        <article class="dashboardMain">
+        <article class="dashboardMain my-5">
             <div class="me-5">
                 <div class="d-flex flex-column justify-content-center align-center text-center userCard">
-                    <img src="../assets/logo.png" alt="Profile" class="w-50 m-auto p-3">
+                    <img src="../assets/user.png" alt="Profile" class="w-50 m-auto p-3">
                     <div class="userName">User</div>
                 </div>
                 <div class="my-3 menuCard">
                     <div class="userName ps-3">Menu</div>
-                    <router-link to="/ListBarangView" class="underline">
+                    <router-link to="/DashboardView" class="underline">
                         <div class="px-3">Barang</div>
                     </router-link>
                     <router-link to="/ListSupplierView" class="underline">
@@ -32,6 +33,15 @@
                 <div class="dashboardText py-2 ps-3">Dashboard</div>
                 <div class="d-flex p-4 justify-content-between">
                     <div class="barang">Barang</div>
+                    <div class="input-group mb-3 formSearch">
+                        <div>
+                            <input type="text" class="form-control" placeholder="Search ..." aria-label="Search"
+                                aria-describedby="basic-addon2">
+                        </div>
+                        <div class="bg-light ms-2 rounded p-1">
+                            <img src="../assets/search.png" alt="search">
+                        </div>
+                    </div>
                     <router-link to="/SupplierView">
                         <button type="button" class="btn btn-primary">Tambah Supplier</button>
                     </router-link>
@@ -60,10 +70,20 @@
                         </tr>
                     </tbody>
                 </table>
+                <nav aria-label="..." class="d-flex justify-content-center">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">Previous</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </article>
         <FooterSinau />
-    </div>
+    </body>
 </template>
 
 <script>
@@ -134,11 +154,19 @@
 </script>
 
 <style scoped>
+    body {
+        background-color: #F5EFE6;
+    }
+
+    .formSearch {
+        width: 20vw;
+    }
+
     .dashboardMain {
-        height: 100vh;
+        /* height: 100vh;
         width: 100%;
         align-items: center;
-        margin-top: -9vw;
+        margin-top: -9vw; */
         display: flex;
         justify-content: center;
     }
@@ -173,5 +201,4 @@
     .underline {
         text-decoration: none;
     }
-
 </style>
