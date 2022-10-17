@@ -18,7 +18,7 @@
                     </router-link>
                 </div>
                 <div class="onlineCard">
-                    <div class="userName ps-3">Online</div>
+                    <div class="userName ps-3">Online<button class="bg-success rounded-circle ms-1" style="border: none; color: green; width: 3px; height: 12px;"></button></div>
                     <div class="d-flex justify-content-between px-3">
                         <span>Hari Online</span>
                         <span>2022-10-06</span>
